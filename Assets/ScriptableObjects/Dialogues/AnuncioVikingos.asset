@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25e9c3f6361fbb4f840715165c97743, type: 3}
+  m_Name: AnuncioVikingos
+  m_EditorClassIdentifier: 
+  Dialogue:
+  - speakerName: Rome Soldier
+    speakerSprite: {fileID: 21300000, guid: 8547d3b49cb6afe479885f79989992ba, type: 3}
+    dialogue: Hey! How is everything?
+    spritePosition: 0
+  - speakerName: Rome Emperor
+    speakerSprite: {fileID: 21300000, guid: 76136876c49b54141ad88872084e96a4, type: 3}
+    dialogue: Very well! We have been training and preparing for battle! ...
+    spritePosition: 1
+  - speakerName: Rome Soldier
+    speakerSprite: {fileID: 21300000, guid: 8547d3b49cb6afe479885f79989992ba, type: 3}
+    dialogue: There are rumors that a fairly strong enemy is about to arrive.
+    spritePosition: 0
+  - speakerName: Rome Emperor
+    speakerSprite: {fileID: 21300000, guid: 76136876c49b54141ad88872084e96a4, type: 3}
+    dialogue: Yes, we'll be ready.
+    spritePosition: 1
+  - speakerName: "\xBF?"
+    speakerSprite: {fileID: 21300000, guid: 7db1e4f0a794a6844bf3e2dc9ae700c5, type: 3}
+    dialogue: "The undercover warrior tell us everything about you! \r"
+    spritePosition: 0
+  - speakerName: "\xBF?"
+    speakerSprite: {fileID: 21300000, guid: 7db1e4f0a794a6844bf3e2dc9ae700c5, type: 3}
+    dialogue: It seems that you are a difficult enemy to defeat.
+    spritePosition: 0
+  - speakerName: "\xBF?"
+    speakerSprite: {fileID: 21300000, guid: 7db1e4f0a794a6844bf3e2dc9ae700c5, type: 3}
+    dialogue: "We are coming very soon and we\u2019ll see you on the battlefield!"
+    spritePosition: 0
+  - speakerName: Thor
+    speakerSprite: {fileID: 21300000, guid: d38c6820230a3ce40b789a88a2d49ffc, type: 3}
+    dialogue: We will defend our Tower and destroy yours!
+    spritePosition: 0
+  - speakerName: Thor
+    speakerSprite: {fileID: 21300000, guid: d38c6820230a3ce40b789a88a2d49ffc, type: 3}
+    dialogue: "The treasures and glory belong to Vikings!\r"
+    spritePosition: 0
