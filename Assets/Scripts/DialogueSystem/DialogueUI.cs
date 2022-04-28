@@ -7,7 +7,7 @@ using static DialogueObject;
 
 public class DialogueUI : MonoBehaviour
 {
-    [SerializeField] private GameObject dialogueBox;
+    [SerializeField] private UnityEngine.GameObject dialogueBox;
     [SerializeField] private TMP_Text speakerLabel;
     [SerializeField] private TMP_Text textLabel;
     [SerializeField] private Image rightSpeakerImage;

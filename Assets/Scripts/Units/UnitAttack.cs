@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class UnitAttack : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> enemiesOnRange;
+    [SerializeField] private List<UnityEngine.GameObject> enemiesOnRange;
 
-    [SerializeField] private GameObject attackEffect;
+    [SerializeField] private UnityEngine.GameObject attackEffect;
 
     private float attackTimer;
 
@@ -32,12 +32,12 @@ public class UnitAttack : MonoBehaviour
         else { enemiesOnRange.Clear(); }
     }
 
-    void AddEnemy(GameObject enemy) 
+    void AddEnemy(UnityEngine.GameObject enemy) 
     { 
         enemiesOnRange.Add(enemy);
     }
 
-    void RemoveEnemy(GameObject enemy) { enemiesOnRange.Remove(enemy); }
+    void RemoveEnemy(UnityEngine.GameObject enemy) { enemiesOnRange.Remove(enemy); }
 
     void ShowAttackEffect()
     {

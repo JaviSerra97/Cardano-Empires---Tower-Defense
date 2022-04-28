@@ -27,7 +27,7 @@ public class EnemyStats : MonoBehaviour
 
     private HealthBar healthBar;
 
-    [SerializeField]private EnemyPath path;
+    private EnemyPath path;
 
     private void Awake()
     {

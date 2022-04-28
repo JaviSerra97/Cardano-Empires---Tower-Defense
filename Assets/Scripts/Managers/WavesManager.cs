@@ -17,7 +17,7 @@ public class WavesManager : Singleton<WavesManager>
     public class WaveEnemy
     {
         public string ID;
-        public GameObject enemy;
+        public UnityEngine.GameObject enemy;
         public float spawnTime;
         public Transform spawnPoint;
     }
@@ -36,7 +36,7 @@ public class WavesManager : Singleton<WavesManager>
     private WaveEnemy nextEnemy;
     private Wave currentWave;
 
-    private List<GameObject> spawnedEnemies;
+    private List<UnityEngine.GameObject> spawnedEnemies = new List<UnityEngine.GameObject>();
     private bool levelStarted = false;
 
     private void Start()
@@ -53,7 +53,7 @@ public class WavesManager : Singleton<WavesManager>
         }
 
         enemyTimer += Time.deltaTime;
-        if(enemyTimer >= nextEnemy.spawnTime)
+        if(nextEnemy != null && enemyTimer >= nextEnemy.spawnTime)
         {
             SpawnEnemy();
             //enemyTimer = 0;
@@ -64,8 +64,11 @@ public class WavesManager : Singleton<WavesManager>
 
     void SpawnEnemy()
     {
-        GameObject e = Instantiate(nextEnemy.enemy, nextEnemy.spawnPoint.position, Quaternion.identity, enemiesParent);
+        if(nextEnemy == null){return;}
+        
+        UnityEngine.GameObject e = Instantiate(nextEnemy.enemy, nextEnemy.spawnPoint.position, Quaternion.identity, enemiesParent);
         spawnedEnemies.Add(e);
+        Debug.Log("instanciar enemigo");
 
         currentEnemyIndex++;
         SetNextEnemy();
@@ -75,7 +78,14 @@ public class WavesManager : Singleton<WavesManager>
 
     void SetNextEnemy()
     {
-        nextEnemy = currentWave.Enemies[currentEnemyIndex];
+        if (currentWave.Enemies.Count > currentEnemyIndex)
+        {
+            nextEnemy = currentWave.Enemies[currentEnemyIndex];
+        }
+        else
+        {
+            nextEnemy = null;
+        }
     }
 
     void SetCurrentWave()
@@ -87,15 +97,23 @@ public class WavesManager : Singleton<WavesManager>
 
     void StartNextWave()
     {
-        currentEnemyIndex = 0;
-        enemyTimer = 0;
-        waveTimer = 0;
+        if (listOfWaves.Count - 1 > currentWaveIndex)
+        {
+            Debug.Log("Siguiente oleada");
+            currentEnemyIndex = 0;
+            enemyTimer = 0;
+            waveTimer = 0;
 
-        currentWaveIndex++;
+            currentWaveIndex++;
 
-        SetCurrentWave();
+            SetCurrentWave();
+        }
+        else
+        {
+            Debug.Log("No hay mas oleadas");
+        }
     }
 
-    public void RemoveEnemy(GameObject e) { spawnedEnemies.Remove(e); }
+    public void RemoveEnemy(UnityEngine.GameObject e) { spawnedEnemies.Remove(e); }
 
 }

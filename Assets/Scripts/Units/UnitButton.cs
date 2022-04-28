@@ -5,7 +5,7 @@ using UnityEngine;
 public class UnitButton : MonoBehaviour
 {
     [SerializeField] private Unit unit;
-    [SerializeField] private GameObject unitBlueprint;
+    [SerializeField] private UnityEngine.GameObject unitBlueprint;
     [SerializeField] private Transform unitsParent;
 
     [SerializeField] private KeyCode keyToInvoke;

@@ -7,20 +7,20 @@ using Utils;
 public class UnitsSelectorManager : Singleton<UnitsSelectorManager>
 {
     [SerializeField] private Transform selectedLayout;
-    [SerializeField] private List<GameObject> selectedTeam;
+    [SerializeField] private List<UnityEngine.GameObject> selectedTeam;
 
     [SerializeField] private int teamCapacity;
     private int currentOccupation = 0;
 
     public void OnButtonPressed()
     {
-        GameObject unit = EventSystem.current.currentSelectedGameObject.gameObject;
+        UnityEngine.GameObject unit = EventSystem.current.currentSelectedGameObject.gameObject;
         SelectableUnit u = unit.GetComponent<SelectableUnit>();
         if (u)
         {
             if (!u.IsSelected() && CheckCapacity(5))
             {
-                GameObject go = Instantiate(unit, selectedLayout);
+                UnityEngine.GameObject go = Instantiate(unit, selectedLayout);
                 selectedTeam.Add(go);
                 go.AddComponent<SelectedUnit>();
                 Destroy(go.GetComponent<SelectableUnit>());
@@ -34,7 +34,7 @@ public class UnitsSelectorManager : Singleton<UnitsSelectorManager>
         else { Destroy(unit);}
     }
 
-    public void RemoveFromTeam(GameObject go) 
+    public void RemoveFromTeam(UnityEngine.GameObject go) 
     {
         if (selectedTeam.Contains(go)) 
         {

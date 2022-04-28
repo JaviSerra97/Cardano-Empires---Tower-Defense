@@ -98,7 +98,7 @@ public class LevelManager : Singleton<LevelManager>
 
     public GridCell GetSelectedCell() { return selectedCell; }
 
-    public void SetUnitOnCell(GameObject unit) 
+    public void SetUnitOnCell(UnityEngine.GameObject unit) 
     {
         unit.transform.position = selectedCell.transform.position;
         selectedCell.UnitPlaced(true);

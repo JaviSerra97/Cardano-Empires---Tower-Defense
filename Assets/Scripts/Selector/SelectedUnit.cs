@@ -5,7 +5,7 @@ using UnityEngine;
 public class SelectedUnit : MonoBehaviour
 {
     [SerializeField] private SelectableUnit unit;
-    public void SetUnitReference(GameObject u) { unit = u.GetComponent<SelectableUnit>(); }
+    public void SetUnitReference(UnityEngine.GameObject u) { unit = u.GetComponent<SelectableUnit>(); }
 
     private void OnDestroy()
     {

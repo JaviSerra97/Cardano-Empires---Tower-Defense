@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlaceUnitOnCell : MonoBehaviour
 {
-    [SerializeField] private GameObject removeButton;
+    [SerializeField] private UnityEngine.GameObject removeButton;
     private bool isButtonActive;
 
     [SerializeField] private LayerMask unitLayer;

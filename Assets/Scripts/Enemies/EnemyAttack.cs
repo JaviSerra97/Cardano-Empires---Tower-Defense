@@ -6,7 +6,7 @@ public class EnemyAttack : MonoBehaviour
 {
     [SerializeField] private bool stopToAttack;
 
-    private GameObject target;
+    private UnityEngine.GameObject target;
     private EnemyStats stats;
     private EnemyPath path;
 
@@ -22,16 +22,16 @@ public class EnemyAttack : MonoBehaviour
     {
         if (target)
         {
-            //if (stopToAttack) { path.SetMoveState(false); }
+            if (stopToAttack) { path.SetMoveState(false); }
             attackTimer += Time.deltaTime;
             if (attackTimer >= 1 / stats.GetAttackSpeed())
             {
-                if (stopToAttack) { path.SetMoveState(false); }
+                //if (stopToAttack) { path.SetMoveState(false); }
 
                 attackTimer = 0;
                 target.GetComponent<UnitStats>().Damage(stats.GetAttackDamage(), stats.GetEmpire());
 
-                Invoke(nameof(RestartMove), 0.15f);
+                //Invoke(nameof(RestartMove), 0.15f);
             }
         }
         else
@@ -49,7 +49,7 @@ public class EnemyAttack : MonoBehaviour
 
     void RestartMove() { path.SetMoveState(true); }
 
-    GameObject GetCorrectParent(Transform child)
+    UnityEngine.GameObject GetCorrectParent(Transform child)
     {
         return child.parent.parent.gameObject;
     }

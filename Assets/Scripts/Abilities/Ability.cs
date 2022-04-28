@@ -9,7 +9,7 @@ public class Ability : ScriptableObject
     public string id;
     public AbilityRange range;
     public AbilityTarget target;
-    public GameObject abilityRange;
+    public UnityEngine.GameObject abilityRange;
     public Damage damage;
     public float abilityCooldown;
     public List<Buff> buffsList;

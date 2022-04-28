@@ -11,11 +11,11 @@ public class UnitAbility : MonoBehaviour
     private bool showRange = false;
     private float timer;
 
-    [SerializeField] private List<GameObject> listOfEnemies;
+    [SerializeField] private List<UnityEngine.GameObject> listOfEnemies;
 
     private AbilityBar abilityBar;
 
-    private GameObject range;
+    private UnityEngine.GameObject range;
 
     private UnitStats stats;
 
@@ -119,7 +119,7 @@ public class UnitAbility : MonoBehaviour
                 }
                 else if(ability.range == AbilityRange.Range)
                 {
-                    foreach(GameObject e in listOfEnemies)
+                    foreach(UnityEngine.GameObject e in listOfEnemies)
                     {
                         EnemyStats s = e.GetComponent<EnemyStats>();
                         s.Damage(CalculateAbilityDamage(), stats.GetEmpire());
@@ -130,8 +130,8 @@ public class UnitAbility : MonoBehaviour
                 }
                 else if(ability.range == AbilityRange.Global)
                 {
-                    GameObject[] enemiesOnScene = GameObject.FindGameObjectsWithTag("Enemy");
-                    foreach(GameObject e in enemiesOnScene)
+                    UnityEngine.GameObject[] enemiesOnScene = UnityEngine.GameObject.FindGameObjectsWithTag("Enemy");
+                    foreach(UnityEngine.GameObject e in enemiesOnScene)
                     {
                         EnemyStats s = e.GetComponent<EnemyStats>();
                         s.Damage(CalculateAbilityDamage(), stats.GetEmpire());
@@ -155,12 +155,12 @@ public class UnitAbility : MonoBehaviour
         ShowRange(false);
     }
 
-    public void AddEnemy(GameObject e) 
+    public void AddEnemy(UnityEngine.GameObject e) 
     {
         if (!listOfEnemies.Contains(e)) { listOfEnemies.Add(e); }
     }
 
-    public void RemoveEnemy(GameObject e) { listOfEnemies.Remove(e); }
+    public void RemoveEnemy(UnityEngine.GameObject e) { listOfEnemies.Remove(e); }
 
     public void ClearEnemiesList() { listOfEnemies.Clear(); }
 

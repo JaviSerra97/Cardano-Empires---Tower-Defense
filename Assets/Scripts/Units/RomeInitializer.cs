@@ -90,10 +90,10 @@ public class RomeInitializer : Singleton<RomeInitializer>
     [SerializeField] private EquipmentStats calceus;
 
     [Header("Attack Ranges")]
-    [SerializeField] private GameObject swordRange;
-    [SerializeField] private GameObject stoneSwordRange;
-    [SerializeField] private GameObject bowRange;
-    [SerializeField] private GameObject spearRange;
+    [SerializeField] private UnityEngine.GameObject swordRange;
+    [SerializeField] private UnityEngine.GameObject stoneSwordRange;
+    [SerializeField] private UnityEngine.GameObject bowRange;
+    [SerializeField] private UnityEngine.GameObject spearRange;
 
 
     public void InitializeUnit(UnitStats u)
